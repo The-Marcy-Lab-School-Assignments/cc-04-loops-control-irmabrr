@@ -33,21 +33,34 @@ function betweenFiveAndTwenty(para) {
 }
 console.log(betweenFiveAndTwenty(100));
 
-function sumOfThreeOrFive() {
-  sum = 0;
-  for (i = 1; i > 1000; i++) {
+const sumOfThreeOrFive = () => {
+  let sum = 0;
+  //sum variable made to continue adding to this
+  //will be adding within the for loop
+  for (i = 1; i < 1000; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      sum = sum + i;
+      sum += i;
+      //when you have a = in front of a variable you are reassigning it
+      //console.log(sum);
     }
   }
-}
-sumOfThreeOrFive();
+  // we return sum outside of the for loop to give us a final total, so we arent constantly printing sum after
+  //every iteration
+  return sum;
+};
+console.log(sumOfThreeOrFive());
+//if sum was declared in the for loop it will reset every time it is run
+// anything inside {} cannot be accessed outside of the {}
 
-function isAllLowerCase (' '){
-            if ( ){
-                        return true;
-            } else {
-                        return false;
-            }
+const isAllLowerCase = (str) => {
+  if (str.toLowerCase() === str) {
+    //we will be comparing the string to string.toLowerCase to make sure they match
+    // === has to be exact and it will return a true or false so if we wanted we can just write
+    // return str.toLowerCase() === str;
+    return true;
+  } else {
+    false;
+  }
+};
 
-}
+console.log(isAllLowerCase("hello"));
